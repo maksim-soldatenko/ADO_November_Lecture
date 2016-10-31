@@ -85,5 +85,19 @@ namespace Orders
         {
             _dataSetOperations.SubmitChanges();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var transient = new Transient();
+            var products = transient.GetProductsWithRetry(Log);
+
+            GridTransientProducts.DataSource = products;
+        }
+
+        private void Log(string log)
+        {
+            richTextBox1.AppendText(String.Format("--------------{0}{1}", Environment.NewLine, log));
+            richTextBox1.Refresh();
+        }
     }
 }

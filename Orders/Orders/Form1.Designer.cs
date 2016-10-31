@@ -39,10 +39,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.GridTransientProducts = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridDsCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridDsOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridTransientProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // GridCustomers
@@ -50,12 +54,12 @@
             this.GridCustomers.AllowUserToAddRows = false;
             this.GridCustomers.AllowUserToDeleteRows = false;
             this.GridCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridCustomers.Location = new System.Drawing.Point(13, 13);
+            this.GridCustomers.Location = new System.Drawing.Point(171, 12);
             this.GridCustomers.MultiSelect = false;
             this.GridCustomers.Name = "GridCustomers";
             this.GridCustomers.ReadOnly = true;
             this.GridCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridCustomers.Size = new System.Drawing.Size(473, 150);
+            this.GridCustomers.Size = new System.Drawing.Size(426, 150);
             this.GridCustomers.TabIndex = 0;
             // 
             // GridProducts
@@ -73,7 +77,7 @@
             // 
             // BtnLoad
             // 
-            this.BtnLoad.Location = new System.Drawing.Point(13, 191);
+            this.BtnLoad.Location = new System.Drawing.Point(41, 54);
             this.BtnLoad.Name = "BtnLoad";
             this.BtnLoad.Size = new System.Drawing.Size(124, 32);
             this.BtnLoad.TabIndex = 2;
@@ -83,7 +87,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(159, 191);
+            this.button1.Location = new System.Drawing.Point(41, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 32);
             this.button1.TabIndex = 3;
@@ -93,7 +97,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(316, 191);
+            this.button2.Location = new System.Drawing.Point(41, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 32);
             this.button2.TabIndex = 4;
@@ -103,7 +107,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(13, 356);
+            this.button3.Location = new System.Drawing.Point(12, 263);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(153, 23);
             this.button3.TabIndex = 5;
@@ -116,12 +120,12 @@
             this.GridDsCustomers.AllowUserToAddRows = false;
             this.GridDsCustomers.AllowUserToDeleteRows = false;
             this.GridDsCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridDsCustomers.Location = new System.Drawing.Point(172, 356);
+            this.GridDsCustomers.Location = new System.Drawing.Point(171, 215);
             this.GridDsCustomers.MultiSelect = false;
             this.GridDsCustomers.Name = "GridDsCustomers";
             this.GridDsCustomers.ReadOnly = true;
             this.GridDsCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridDsCustomers.Size = new System.Drawing.Size(314, 161);
+            this.GridDsCustomers.Size = new System.Drawing.Size(426, 161);
             this.GridDsCustomers.TabIndex = 6;
             // 
             // GridDsOrders
@@ -129,7 +133,7 @@
             this.GridDsOrders.AllowUserToAddRows = false;
             this.GridDsOrders.AllowUserToDeleteRows = false;
             this.GridDsOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridDsOrders.Location = new System.Drawing.Point(617, 356);
+            this.GridDsOrders.Location = new System.Drawing.Point(617, 215);
             this.GridDsOrders.Name = "GridDsOrders";
             this.GridDsOrders.ReadOnly = true;
             this.GridDsOrders.Size = new System.Drawing.Size(554, 161);
@@ -137,7 +141,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(13, 386);
+            this.button4.Location = new System.Drawing.Point(12, 293);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(153, 23);
             this.button4.TabIndex = 8;
@@ -147,7 +151,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(13, 416);
+            this.button5.Location = new System.Drawing.Point(12, 323);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(153, 23);
             this.button5.TabIndex = 9;
@@ -157,7 +161,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(13, 446);
+            this.button6.Location = new System.Drawing.Point(12, 353);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(153, 23);
             this.button6.TabIndex = 10;
@@ -165,11 +169,43 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(12, 428);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(153, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Run Transien Fault Demo";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(171, 421);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(426, 96);
+            this.richTextBox1.TabIndex = 12;
+            this.richTextBox1.Text = "";
+            // 
+            // GridTransientProducts
+            // 
+            this.GridTransientProducts.AllowUserToAddRows = false;
+            this.GridTransientProducts.AllowUserToDeleteRows = false;
+            this.GridTransientProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridTransientProducts.Location = new System.Drawing.Point(617, 421);
+            this.GridTransientProducts.Name = "GridTransientProducts";
+            this.GridTransientProducts.ReadOnly = true;
+            this.GridTransientProducts.Size = new System.Drawing.Size(554, 96);
+            this.GridTransientProducts.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 529);
+            this.Controls.Add(this.GridTransientProducts);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -187,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridDsCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridDsOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridTransientProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,6 +241,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView GridTransientProducts;
     }
 }
 
