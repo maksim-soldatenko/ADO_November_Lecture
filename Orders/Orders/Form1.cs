@@ -99,5 +99,11 @@ namespace Orders
             richTextBox1.AppendText(String.Format("--------------{0}{1}", Environment.NewLine, log));
             richTextBox1.Refresh();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var trn = new Transaction();
+            trn.InsertTransact(Log);
+        }
     }
 }

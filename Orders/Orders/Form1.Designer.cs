@@ -42,6 +42,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.GridTransientProducts = new System.Windows.Forms.DataGridView();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridDsCustomers)).BeginInit();
@@ -198,11 +199,22 @@
             this.GridTransientProducts.Size = new System.Drawing.Size(554, 96);
             this.GridTransientProducts.TabIndex = 13;
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(13, 458);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(152, 23);
+            this.button8.TabIndex = 14;
+            this.button8.Text = "Transaction insert";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 529);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.GridTransientProducts);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button7);
@@ -244,6 +256,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView GridTransientProducts;
+        private System.Windows.Forms.Button button8;
     }
 }
 
