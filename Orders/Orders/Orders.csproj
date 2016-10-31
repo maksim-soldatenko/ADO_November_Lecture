@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="DataSetOperations.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Form1.cs">
