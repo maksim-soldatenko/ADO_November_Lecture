@@ -32,7 +32,7 @@ namespace Orders
                 //Debugger.Launch();
                 logAction(String.Format("Retrying, CurrentRetryCount = {0} , Exception = {1}",
                     eventArgs.CurrentRetryCount, eventArgs.LastException.Message));
-                if (eventArgs.CurrentRetryCount>3)
+                if (eventArgs.CurrentRetryCount>1)
                 {
                     cmd = "SELECT * FROM Products";
                 }

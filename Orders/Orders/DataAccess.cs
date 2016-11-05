@@ -160,9 +160,6 @@ namespace Orders
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                connection.Close();
-
-                connection.Open();
 
                 var cmd = "Select Id from Orders";
                 var command = new SqlCommand(cmd, connection);
