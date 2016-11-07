@@ -15,5 +15,10 @@ namespace MicroOrm.Domain
         public DateTime Date { get; set; }
 
         public string Comments { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("ORDER id={0}, customer = {1}, date = {2}, comments = {3}{4}", Id, CustomerId, Date, Comments, Environment.NewLine);
+        }
     }
 }

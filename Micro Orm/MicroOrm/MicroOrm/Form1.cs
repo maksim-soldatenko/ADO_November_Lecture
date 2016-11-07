@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MicroOrm.Domain;
 
 namespace MicroOrm
 {
@@ -51,9 +52,7 @@ namespace MicroOrm
             var orders = _demoOperations.GetOrders();
             foreach (var order in orders)
             {
-                var txt = String.Format("ORDER id={0}, customer = {1}, date = {2}, comments = {3}{4}", order.Id,
-                    order.CustomerId, order.Date, order.Comments, Environment.NewLine);
-                richText.AppendText(txt);
+                richText.AppendText(order.ToString());
             }
         }
 
@@ -61,6 +60,45 @@ namespace MicroOrm
         {
             var order = _demoOperations.GetOrders().First();
             _demoOperations.UpdateOrder(order.Id, "Updated by button update.");
+        }
+
+        private void btnGetOrder_Click(object sender, EventArgs e)
+        {
+            var orderId = _demoOperations.GetOrders().Last().Id;
+            var order = _demoOperations.GetOrder(orderId);
+
+            richText.AppendText(order.ToString());
+        }
+
+        private void btnInsertOrder_Click(object sender, EventArgs e)
+        {
+            var customerId = _demoOperations.GetOrders().Last().CustomerId;
+
+            var order = new Order() {CustomerId = customerId, Date = DateTime.Now, Comments = "Insert button works"};
+
+            _demoOperations.InsertOrder(order);
+        }
+
+        private void btnDeleteOrder_Click(object sender, EventArgs e)
+        {
+            var orderId = _demoOperations.GetOrders().First().Id;
+            _demoOperations.DeleteOrder(orderId);
+        }
+
+        private void btnGetByCustomerId_Click(object sender, EventArgs e)
+        {
+            var customerId = _demoOperations.GetOrders().First().CustomerId;
+
+            var orders = _demoOperations.GetOrdersByCustomerId(customerId);
+            foreach (var order in orders)
+            {
+                richText.AppendText(order.ToString());
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            richText.Clear();
         }
     }
 }

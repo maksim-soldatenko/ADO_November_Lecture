@@ -39,6 +39,11 @@ namespace MicroOrm
             throw new NotImplementedException();
         }
 
+        public override List<Order> GetOrdersByCustomerId(int customerId)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void InsertOrder(Order order)
         {
             throw new NotImplementedException();

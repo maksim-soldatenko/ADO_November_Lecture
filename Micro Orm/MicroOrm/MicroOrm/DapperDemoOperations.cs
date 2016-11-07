@@ -78,7 +78,23 @@ namespace MicroOrm
 
         public override void DeleteOrder(int id)
         {
-            throw new NotImplementedException();
+            var order = GetOrder(id);
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var predicate = Predicates.Field<Order>(f => f.Id, Operator.Eq, id);
+                connection.Delete<Order>(predicate);
+            }
+        }
+
+        public override List<Order> GetOrdersByCustomerId(int customerId)
+        {
+            var predicate = Predicates.Field<Order>(f => f.CustomerId, Operator.Eq, customerId);
+            var sort = Predicates.Sort<Order>(o => o.Date, false);
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                return connection.GetList<Order>(predicate, new List<ISort>() {sort}).ToList();
+            }
         }
 
         public override void InsertOrder(Order order)

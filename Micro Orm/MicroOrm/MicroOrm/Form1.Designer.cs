@@ -35,6 +35,11 @@
             this.richText = new System.Windows.Forms.RichTextBox();
             this.btnGetOrders = new System.Windows.Forms.Button();
             this.btnUpdateOrder = new System.Windows.Forms.Button();
+            this.btnGetOrder = new System.Windows.Forms.Button();
+            this.btnInsertOrder = new System.Windows.Forms.Button();
+            this.btnDeleteOrder = new System.Windows.Forms.Button();
+            this.btnGetByCustomerId = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -63,7 +68,7 @@
             // 
             // btnFillOrders
             // 
-            this.btnFillOrders.Location = new System.Drawing.Point(13, 115);
+            this.btnFillOrders.Location = new System.Drawing.Point(13, 60);
             this.btnFillOrders.Name = "btnFillOrders";
             this.btnFillOrders.Size = new System.Drawing.Size(75, 23);
             this.btnFillOrders.TabIndex = 2;
@@ -73,7 +78,7 @@
             // 
             // btnClearOrders
             // 
-            this.btnClearOrders.Location = new System.Drawing.Point(13, 145);
+            this.btnClearOrders.Location = new System.Drawing.Point(13, 89);
             this.btnClearOrders.Name = "btnClearOrders";
             this.btnClearOrders.Size = new System.Drawing.Size(75, 23);
             this.btnClearOrders.TabIndex = 3;
@@ -85,13 +90,13 @@
             // 
             this.richText.Location = new System.Drawing.Point(101, 13);
             this.richText.Name = "richText";
-            this.richText.Size = new System.Drawing.Size(820, 335);
+            this.richText.Size = new System.Drawing.Size(820, 312);
             this.richText.TabIndex = 4;
             this.richText.Text = "";
             // 
             // btnGetOrders
             // 
-            this.btnGetOrders.Location = new System.Drawing.Point(13, 175);
+            this.btnGetOrders.Location = new System.Drawing.Point(13, 166);
             this.btnGetOrders.Name = "btnGetOrders";
             this.btnGetOrders.Size = new System.Drawing.Size(75, 23);
             this.btnGetOrders.TabIndex = 5;
@@ -101,7 +106,7 @@
             // 
             // btnUpdateOrder
             // 
-            this.btnUpdateOrder.Location = new System.Drawing.Point(13, 205);
+            this.btnUpdateOrder.Location = new System.Drawing.Point(13, 224);
             this.btnUpdateOrder.Name = "btnUpdateOrder";
             this.btnUpdateOrder.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateOrder.TabIndex = 6;
@@ -109,11 +114,66 @@
             this.btnUpdateOrder.UseVisualStyleBackColor = true;
             this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click);
             // 
+            // btnGetOrder
+            // 
+            this.btnGetOrder.Location = new System.Drawing.Point(13, 195);
+            this.btnGetOrder.Name = "btnGetOrder";
+            this.btnGetOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnGetOrder.TabIndex = 7;
+            this.btnGetOrder.Text = "Get Order";
+            this.btnGetOrder.UseVisualStyleBackColor = true;
+            this.btnGetOrder.Click += new System.EventHandler(this.btnGetOrder_Click);
+            // 
+            // btnInsertOrder
+            // 
+            this.btnInsertOrder.Location = new System.Drawing.Point(13, 253);
+            this.btnInsertOrder.Name = "btnInsertOrder";
+            this.btnInsertOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertOrder.TabIndex = 8;
+            this.btnInsertOrder.Text = "Insert Order";
+            this.btnInsertOrder.UseVisualStyleBackColor = true;
+            this.btnInsertOrder.Click += new System.EventHandler(this.btnInsertOrder_Click);
+            // 
+            // btnDeleteOrder
+            // 
+            this.btnDeleteOrder.Location = new System.Drawing.Point(13, 283);
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteOrder.TabIndex = 9;
+            this.btnDeleteOrder.Text = "Delete Order";
+            this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
+            // 
+            // btnGetByCustomerId
+            // 
+            this.btnGetByCustomerId.Location = new System.Drawing.Point(13, 313);
+            this.btnGetByCustomerId.Name = "btnGetByCustomerId";
+            this.btnGetByCustomerId.Size = new System.Drawing.Size(75, 23);
+            this.btnGetByCustomerId.TabIndex = 10;
+            this.btnGetByCustomerId.Text = "Get by Customer";
+            this.btnGetByCustomerId.UseVisualStyleBackColor = true;
+            this.btnGetByCustomerId.Click += new System.EventHandler(this.btnGetByCustomerId_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(846, 331);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 11;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 360);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnGetByCustomerId);
+            this.Controls.Add(this.btnDeleteOrder);
+            this.Controls.Add(this.btnInsertOrder);
+            this.Controls.Add(this.btnGetOrder);
             this.Controls.Add(this.btnUpdateOrder);
             this.Controls.Add(this.btnGetOrders);
             this.Controls.Add(this.richText);
@@ -137,6 +197,11 @@
         private System.Windows.Forms.RichTextBox richText;
         private System.Windows.Forms.Button btnGetOrders;
         private System.Windows.Forms.Button btnUpdateOrder;
+        private System.Windows.Forms.Button btnGetOrder;
+        private System.Windows.Forms.Button btnInsertOrder;
+        private System.Windows.Forms.Button btnDeleteOrder;
+        private System.Windows.Forms.Button btnGetByCustomerId;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

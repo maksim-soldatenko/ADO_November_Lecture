@@ -27,6 +27,7 @@ namespace MicroOrm
         public abstract void InsertOrder(Order order);
         public abstract void UpdateOrder(int orderId, string comment);
         public abstract void DeleteOrder(int id);
+        public abstract List<Order> GetOrdersByCustomerId(int customerId);
 
     }
 }
