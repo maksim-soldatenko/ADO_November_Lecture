@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfDemo", "EfDemo\EfDemo.csproj", "{DBFB816A-9F67-4CDA-93B5-519F573BBCF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "Migrations\Migrations.csproj", "{3ED07BAA-2025-4581-AA56-6B9FFEFAA650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Dal\Dal.csproj", "{58E08F00-A01E-4525-8889-C357B13EDE63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBFB816A-9F67-4CDA-93B5-519F573BBCF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBFB816A-9F67-4CDA-93B5-519F573BBCF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBFB816A-9F67-4CDA-93B5-519F573BBCF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBFB816A-9F67-4CDA-93B5-519F573BBCF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED07BAA-2025-4581-AA56-6B9FFEFAA650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED07BAA-2025-4581-AA56-6B9FFEFAA650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED07BAA-2025-4581-AA56-6B9FFEFAA650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED07BAA-2025-4581-AA56-6B9FFEFAA650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E08F00-A01E-4525-8889-C357B13EDE63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E08F00-A01E-4525-8889-C357B13EDE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E08F00-A01E-4525-8889-C357B13EDE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E08F00-A01E-4525-8889-C357B13EDE63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
