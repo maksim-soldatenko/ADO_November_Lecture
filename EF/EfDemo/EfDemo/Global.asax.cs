@@ -19,6 +19,8 @@ namespace EfDemo
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             IocConfig.Configure();
+
+            EFConfiguration.Configure();
         }
     }
 }

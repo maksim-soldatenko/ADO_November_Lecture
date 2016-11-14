@@ -47,14 +47,12 @@ namespace EfDemo.Controllers
             return View(model);
         }
 
-        public ActionResult UpdateAnnotation(int bookId, string annotation)
+        public void UpdateAnnotation(int bookId, string annotation)
         {
             var book = _booksRepository.GetById(bookId);
             book.Annotation = annotation;
             _booksRepository.Update(book);
             _unitOfWork.Save();
-
-            return RedirectToAction("BooksByAuthor", new {id = bookId});
         }
     }
 }
