@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal.Domain
 {
-    public class Book: Entity
+    public class Book: IEntity
     {
         public string BookName { get; set; }
 
@@ -15,5 +15,6 @@ namespace Dal.Domain
         public Author Author { get; set; }
 
         private ICollection<Publisher> Publishers { get; set; }
+        public int Id { get; set; }
     }
 }

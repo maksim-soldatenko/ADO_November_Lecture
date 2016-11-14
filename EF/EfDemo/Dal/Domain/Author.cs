@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Dal.Domain
 {
-    public class Author: Entity
+    public class Author: IEntity
     {
         public string Name { get; set; }
 
         public int YearOfBirth { get; set; }
 
         public ICollection<Book> Books { get; set; }
+        public int Id { get; set; }
     }
 }
