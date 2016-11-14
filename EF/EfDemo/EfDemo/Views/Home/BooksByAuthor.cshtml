@@ -1,0 +1,40 @@
+﻿@model EfDemo.Models.BookPublisherModel
+
+@{
+    ViewBag.Title = "BooksByAuthor";
+}
+
+<div class="jumbotron">
+    <table>
+        @foreach (var book in Model.BookModels)
+        {
+            <tr>
+                <td>
+                    @book.Book.BookName
+                </td>
+                <td>
+                    @book.Book.Annotation
+                </td>
+                <td>
+                    <table>
+                        @foreach (var publisher in book.Publishers)
+                        {
+                            <tr>
+                                <td>
+                                    @publisher.PublisherName
+                                </td>
+                                <td>
+                                    @publisher.Rate
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+                <td>
+                    <a href="#">Update annotation</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

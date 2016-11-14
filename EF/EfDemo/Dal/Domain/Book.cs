@@ -14,7 +14,7 @@ namespace Dal.Domain
 
         public Author Author { get; set; }
 
-        private ICollection<Publisher> Publishers { get; set; }
+        public ICollection<Publisher> Publishers { get; set; }
         public int Id { get; set; }
     }
 }
