@@ -12,6 +12,7 @@ namespace Dal
     {
         public DemoContext(): base("Name=DefaultConnectionString")
         {
+            //Database.SetInitializer(new DropCreateDatabaseAlways<DemoContext>());
         }
 
         public DbSet<Author> Authors { get; set; }

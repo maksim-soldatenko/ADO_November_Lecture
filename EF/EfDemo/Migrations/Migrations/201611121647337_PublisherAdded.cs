@@ -17,7 +17,7 @@ namespace Migrations.Migrations
                         Book_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Books", t => t.Book_Id)
+                .ForeignKey("dbo.Books", t => t.Book_Id, cascadeDelete:true)
                 .Index(t => t.Book_Id);
             
         }

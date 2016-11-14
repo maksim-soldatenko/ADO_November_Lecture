@@ -27,7 +27,7 @@ namespace Migrations.Migrations
                         Author_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Authors", t => t.Author_Id)
+                .ForeignKey("dbo.Authors", t => t.Author_Id, cascadeDelete:true)
                 .Index(t => t.Author_Id);
             
         }
