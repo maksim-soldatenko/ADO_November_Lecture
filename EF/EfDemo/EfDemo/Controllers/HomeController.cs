@@ -14,10 +14,12 @@ namespace EfDemo.Controllers
     {
         private readonly IRepository<Author> _authorsRepository;
         private readonly IRepository<Book> _booksRepository;
+        private readonly IUnitOfWork _unitOfWork;
         public HomeController(IUnitOfWork unitOfWork)
         {
-            _authorsRepository = unitOfWork.Repository<Author>();
-            _booksRepository = unitOfWork.Repository<Book>();
+            _unitOfWork = unitOfWork;
+            _authorsRepository = _unitOfWork.Repository<Author>();
+            _booksRepository = _unitOfWork.Repository<Book>();
         }
 
         public ActionResult Index()
@@ -33,16 +35,26 @@ namespace EfDemo.Controllers
             include.Add(b=>b.Publishers);
 
             var books = _booksRepository.Find(b => b.Author.Id == id);
-            _booksRepository.Include(books, include.ToArray());
+            var included = _booksRepository.Include(books, include.ToArray());
 
             var model = new BookPublisherModel() {BookModels = new List<BookModel>()};
-            foreach (var book in books)
+            foreach (var book in included)
             {
                 var bookModel = new BookModel() {Book = book, Publishers = book.Publishers};
                 model.BookModels.Add(bookModel);
             }
 
             return View(model);
+        }
+
+        public ActionResult UpdateAnnotation(int bookId, string annotation)
+        {
+            var book = _booksRepository.GetById(bookId);
+            book.Annotation = annotation;
+            _booksRepository.Update(book);
+            _unitOfWork.Save();
+
+            return RedirectToAction("BooksByAuthor", new {id = bookId});
         }
     }
 }

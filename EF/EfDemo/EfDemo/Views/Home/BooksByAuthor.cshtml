@@ -5,7 +5,7 @@
 }
 
 <div class="jumbotron">
-    <table>
+    <table class="table">
         @foreach (var book in Model.BookModels)
         {
             <tr>
@@ -16,7 +16,7 @@
                     @book.Book.Annotation
                 </td>
                 <td>
-                    <table>
+                    <table class="table">
                         @foreach (var publisher in book.Publishers)
                         {
                             <tr>
@@ -31,10 +31,26 @@
                     </table>
                 </td>
                 <td>
-                    <a href="#">Update annotation</a>
+                    @{ var id = String.Format("txt{0}", book.Book.Id); }
+                    <input type="text" id="@id"/>
+                    <input type="button" value="Update annotation" class="btn-link" onclick="updateAnnotation(@book.Book.Id)"/>
                 </td>
             </tr>
         }
     </table>
 </div>
 
+<script type="text/javascript">
+    function updateAnnotation(id) {
+        var ann = '#txt' + id;
+        var txt = $(ann).val();
+        $.ajax({
+                url: '@Url.Action("UpdateAnnotation")',
+                data: { bookId: id, annotation: txt },
+                method: 'POST'
+            })
+            .done(function() {
+                window.location = window.location;
+            });
+    }
+</script>

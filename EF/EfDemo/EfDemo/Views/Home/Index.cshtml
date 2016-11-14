@@ -10,7 +10,7 @@
         {
             <tr>
                 <td>
-                    @author.Name
+                    @Html.ActionLink(author.Name, "BooksByAuthor", new {id=author.Id})
                 </td>
                 <td>
                     @author.YearOfBirth
