@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal
+namespace Dal.Domain
 {
-    public class Class1
+    public class Entity
     {
+        public int Id { get; set; }
     }
 }

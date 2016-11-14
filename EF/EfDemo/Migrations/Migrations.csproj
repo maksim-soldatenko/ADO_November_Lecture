@@ -49,12 +49,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Migrations\201611121610385_InitialCreate.cs" />
+    <Compile Include="Migrations\201611121610385_InitialCreate.Designer.cs">
+      <DependentUpon>201611121610385_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611121647337_PublisherAdded.cs" />
+    <Compile Include="Migrations\201611121647337_PublisherAdded.Designer.cs">
+      <DependentUpon>201611121647337_PublisherAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dal\Dal.csproj">
+      <Project>{58E08F00-A01E-4525-8889-C357B13EDE63}</Project>
+      <Name>Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611121610385_InitialCreate.resx">
+      <DependentUpon>201611121610385_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611121647337_PublisherAdded.resx">
+      <DependentUpon>201611121647337_PublisherAdded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

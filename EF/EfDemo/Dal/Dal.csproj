@@ -49,7 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DemoContext.cs" />
+    <Compile Include="Domain\Author.cs" />
+    <Compile Include="Domain\Book.cs" />
+    <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Domain\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
