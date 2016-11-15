@@ -47,10 +47,17 @@ namespace EfDemo.Controllers
             return View(model);
         }
 
-        public void UpdateAnnotation(int bookId, string annotation)
+        public void UpdateBook(int bookId, string annotation, byte[] rowVersion)
         {
             var book = _booksRepository.GetById(bookId);
+
+            if (book == null)
+            {
+                throw new Exception("Book not found");
+            }
+
             book.Annotation = annotation;
+            book.RowVersion = rowVersion;
             _booksRepository.Update(book);
             _unitOfWork.Save();
         }

@@ -31,8 +31,14 @@
                     </table>
                 </td>
                 <td>
-                    @{ var id = String.Format("txt{0}", book.Book.Id); }
+                    @{
+                        var id = String.Format("txt{0}", book.Book.Id);
+                        var hdnId = String.Format("hdn{0}", book.Book.Id);
+                        var hdnIdparam = new Dictionary<string, object>();
+                        hdnIdparam.Add("id", hdnId);
+                    }
                     <input type="text" id="@id"/>
+                    @Html.HiddenFor(m=>book.Book.RowVersion, hdnIdparam)
                     <input type="button" value="Update annotation" class="btn-link" onclick="updateAnnotation(@book.Book.Id)"/>
                 </td>
             </tr>
@@ -43,14 +49,19 @@
 <script type="text/javascript">
     function updateAnnotation(id) {
         var ann = '#txt' + id;
+        var vrsn = '#hdn' + id;
+
         var txt = $(ann).val();
+        var version = $(vrsn).val();
         $.ajax({
-                url: '@Url.Action("UpdateAnnotation")',
-                data: { bookId: id, annotation: txt },
+                url: '@Url.Action("UpdateBook")',
+                data: { bookId: id, annotation: txt, rowVersion: version },
                 method: 'POST'
             })
             .done(function() {
                 window.location = window.location;
+            }).fail(function(err) {
+                debugger;
             });
     }
 </script>

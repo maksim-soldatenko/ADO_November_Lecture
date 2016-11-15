@@ -93,6 +93,10 @@
     <Compile Include="Migrations\201611121647337_PublisherAdded.Designer.cs">
       <DependentUpon>201611121647337_PublisherAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611151317083_AddConcurrency.cs" />
+    <Compile Include="Migrations\201611151317083_AddConcurrency.Designer.cs">
+      <DependentUpon>201611151317083_AddConcurrency.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611121647337_PublisherAdded.resx">
       <DependentUpon>201611121647337_PublisherAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611151317083_AddConcurrency.resx">
+      <DependentUpon>201611151317083_AddConcurrency.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

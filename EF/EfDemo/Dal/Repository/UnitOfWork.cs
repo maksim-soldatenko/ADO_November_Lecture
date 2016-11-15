@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Autofac;
 using Dal.Domain;
@@ -12,6 +13,7 @@ namespace Dal.Repository
 {
     public class UnitOfWork: IUnitOfWork
     {
+        private static readonly Regex ROWVERSION_PROPERTY_REGEX = new Regex("RowVersion", RegexOptions.IgnoreCase);
         private readonly DbContext _dbContext;
         private readonly IComponentContext _container;
 
@@ -29,6 +31,7 @@ namespace Dal.Repository
         {
             try
             {
+                UpdateVersions();
                 _dbContext.SaveChanges();
             }
             catch (DbEntityValidationException ex)
@@ -77,6 +80,23 @@ namespace Dal.Repository
                 }
 
                 this._disposed = true;
+            }
+        }
+
+        private void UpdateVersions()
+        {
+            var now = DateTime.UtcNow;
+            var modified = _dbContext.ChangeTracker.Entries().Where(x => x.State == EntityState.Modified);
+            foreach (var entry in modified)
+            {
+                var versionProps = entry.CurrentValues.PropertyNames
+                        .Where(propName => ROWVERSION_PROPERTY_REGEX.IsMatch(propName))
+                        .Select(entry.Property);
+
+                foreach (var dbPropertyEntry in versionProps)
+                {
+                    dbPropertyEntry.OriginalValue = dbPropertyEntry.CurrentValue;
+                }
             }
         }
     }

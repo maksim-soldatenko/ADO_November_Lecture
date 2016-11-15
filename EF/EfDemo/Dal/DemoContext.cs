@@ -21,7 +21,7 @@ namespace Dal
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>().Property(b => b.RowVersion).IsConcurrencyToken();
+            //modelBuilder.Entity<Book>().Property(b => b.RowVersion).IsConcurrencyToken();
         }
     }
 }
