@@ -12,12 +12,16 @@ namespace Dal
     {
         public DemoContext(): base("Name=DefaultConnectionString")
         {
-            //Database.SetInitializer(new DropCreateDatabaseAlways<DemoContext>());
         }
 
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
 
         public DbSet<Publisher> Publishers { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>().Property(b => b.RowVersion).IsConcurrencyToken();
+        }
     }
 }

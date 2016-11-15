@@ -16,5 +16,7 @@ namespace Dal.Domain
 
         public ICollection<Publisher> Publishers { get; set; }
         public int Id { get; set; }
+
+        public byte[] RowVersion { get; set; }
     }
 }
