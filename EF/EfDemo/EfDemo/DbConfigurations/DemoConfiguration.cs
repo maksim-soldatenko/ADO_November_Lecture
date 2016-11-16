@@ -12,7 +12,7 @@ namespace EfDemo.DbConfigurations
     {
         public DemoConfiguration()
         {
-            //SetExecutionStrategy("System.Data.SqlClient", () => new DemoExecutionStrategy(5, TimeSpan.FromSeconds(5)));
+            SetExecutionStrategy("System.Data.SqlClient", () => new DemoExecutionStrategy(5, TimeSpan.FromSeconds(5)));
         }
     }
 
